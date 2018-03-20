@@ -1,0 +1,15 @@
+imagedock:
+ build: .
+ expose:
+  - "9090"
+ enviroment: 
+  ENV: PORD
+ links:
+  - dnmonster
+  - redis
+
+dnmonsteer:
+ image: amouat/dnmonster:1.0
+
+redis:
+ image: redis:3.0
