@@ -12,6 +12,8 @@ before_script:
 - apk upgrade
 - apk add python python-dev py-pip build-base
 - pip install docker-compose
+- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+
 
 build:
   stage: build
@@ -27,4 +29,4 @@ test:
   stage: test
   script:
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock 
-  - ./test.sh
+  
