@@ -40,6 +40,7 @@ test:
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
   - ERR=$? 
   - chmod +x test.sh
-  - ls
+  - ls -a
+  - ./test.sh
   #- echo $ERR
   
