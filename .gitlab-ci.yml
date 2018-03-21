@@ -12,7 +12,7 @@ before_script:
 - apk upgrade
 - apk add python python-dev py-pip build-base
 - pip install docker-compose
-- docker login --password-stdin -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
 
 stages:
   - build
