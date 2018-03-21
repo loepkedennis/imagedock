@@ -40,6 +40,6 @@ test:
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
   - ERR=$? 
   - chmod +x test.sh
-  - ./test.sh $ERR
+  - ls
   #- echo $ERR
-  - docker push registry.gitlab.com/bosolarcar/ci-testing
+  
