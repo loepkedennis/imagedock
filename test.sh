@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+
   #Run system test if unit test passed
 
   if [ $1 -eq 0 ]; then
