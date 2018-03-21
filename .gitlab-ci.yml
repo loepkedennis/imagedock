@@ -38,4 +38,4 @@ test:
   - docker-compose -f docker-compose.yml up -d
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
   - ERR=$?
-  - docker push registry.gitlab.com/bosolarcar/ci-testing/citesting_imagedock_1  
+ 
