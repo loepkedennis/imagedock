@@ -39,8 +39,6 @@ test:
   - docker-compose -f docker-compose.yml up -d
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
   - ERR=$? 
-  - chmod +x test.sh
-  - ls -a
-  - eval ./test.sh
+  - if [ $ERR -eq 0 ]; then IP=$(sudo docker inspect -f {{.NetworkSettings.IPAddress}} citesting_imagedock_1) CODE=$(curl -sL -w "%{http_code}" $IP:5000/monster/bla -o /dev/null) || true if [ $CODE -ne 200 ]; then echo "Site return " fi fi
   #- echo $ERR
   
