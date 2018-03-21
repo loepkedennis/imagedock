@@ -41,6 +41,6 @@ test:
   - ERR=$? 
   - chmod +x test.sh
   - ls -a
-  - ./test.sh
+  - eval ./test.sh
   #- echo $ERR
   
