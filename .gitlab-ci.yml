@@ -34,13 +34,9 @@ stages:
 test:
   stage: test
   script:
-#  - set -e
   - docker-compose -f docker-compose.yml build --no-cache
   - docker-compose -f docker-compose.yml up -d
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
   - ERR=$?
-  - /bin/sh if [ 0 -eq 0 ]; then echo "test" "123" fi 
-#  - if [ $ERR -eq 0 ]; then IP=$(sudo docker inspect -f {{.NetworkSettings.IPAddress}} citesting_imagedock_1) CODE=$(curl -sL -w "%{http_code}" $IP:5000/monster/bla \
- # dev/null) || true if [ $CODE -ne 200 ]; then echo "Site return " fi fi
- #- echo $ERR
+  - docker push docker push registry.gitlab.com/bosolarcar/ci-testing/imagedock:latest
   
