@@ -38,6 +38,7 @@ test:
   - docker-compose -f docker-compose.yml build --no-cache
   - docker-compose -f docker-compose.yml up -d
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
-  - echo $?
+  - chmod +x test.sh
+  - ./test.sh $?
   #- echo $ERR
   - docker push registry.gitlab.com/bosolarcar/ci-testing
