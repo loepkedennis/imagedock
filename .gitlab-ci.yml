@@ -34,9 +34,10 @@ stages:
 test:
   stage: test
   script:
+  - set -e
   - docker-compose -f docker-compose.yml build --no-cache
   - docker-compose -f docker-compose.yml up -d
   - docker-compose -f docker-compose.yml run --no-deps --rm -e ENV=UNIT imagedock
-  - $ERR=$?
-  - echo $ERR
+  - echo $?
+  #- echo $ERR
   - docker push registry.gitlab.com/bosolarcar/ci-testing
