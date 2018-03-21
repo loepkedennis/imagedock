@@ -7,6 +7,6 @@
         CODE=$(curl -sL -w "%{http_code}" $IP:5000/monster/bla -o /dev/null) || true
         if [ $CODE -ne 200 ]; then
         echo "Site return "
-        ERR=1
+        
         fi
  fi
